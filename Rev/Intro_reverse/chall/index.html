@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Intro Challenge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/amazdoom" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Bungee', 'Orbitron', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #3a0707 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      background: repeating-linear-gradient(135deg, rgba(255, 0, 0, 0.04) 0 2px, transparent 2px 8px);
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, #232323 60%, #2d0909 100%);
+      border: 6px solid #a00;
+      border-radius: 18px;
+      box-shadow: 0 0 32px 0 #a00a, 0 0 8px #000a;
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 500px;
+      text-align: center;
+      outline: 3px solid #ff6a00;
+      outline-offset: 6px;
+    }
+
+    .doom-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      filter: drop-shadow(0 0 4px #ff6a00);
+    }
+
+    h1 {
+      font-family: 'Bungee', 'Orbitron', Arial, sans-serif;
+      font-size: 2.1rem;
+      letter-spacing: 2px;
+      color: #ff6a00;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 16px #a00a, 0 0 2px #fff2;
+    }
+
+    p {
+      color: #ffb380;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 1px 2px #000a;
+    }
+
+    .retro-input {
+      font-family: monospace;
+      font-size: 1.1rem;
+      padding: 0.7rem 1.2rem;
+      border: 3px solid #ff6a00;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #ffb380;
+      outline: none;
+      width: 80%;
+      margin-bottom: 1.5rem;
+      box-sizing: border-box;
+      letter-spacing: 1px;
+      transition: border 0.2s, background 0.2s;
+      box-shadow: 0 0 8px #a00a;
+    }
+
+    .retro-input:focus {
+      border-color: #fff200;
+      background: #2d0909;
+      color: #fff200;
+    }
+
+    .retro-btn {
+      font-family: 'Bungee', 'Orbitron', Arial, sans-serif;
+      font-size: 1.1rem;
+      padding: 0.7rem 2.2rem;
+      background: linear-gradient(180deg, #ff6a00 60%, #a00 100%);
+      color: #fff;
+      border: 3px solid #fff200;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #a00a, 0 0 8px #ff6a00aa;
+      margin-top: 0.5rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      position: relative;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s, border 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+
+    .retro-btn::before {
+      content: '\1F480';
+      /* Skull emoji */
+      font-size: 1.2em;
+      margin-right: 0.5em;
+      color: #fff200;
+      filter: drop-shadow(0 0 2px #a00);
+    }
+
+    .retro-btn:hover {
+      background: linear-gradient(180deg, #fff200 40%, #a00 100%);
+      color: #a00;
+      border-color: #ff6a00;
+      box-shadow: 0 4px 16px #ff6a00aa, 0 0 12px #a00a;
+    }
+
+    .error {
+      color: #fff200;
+      margin-top: 1rem;
+      font-size: 1rem;
+      min-height: 1.2em;
+      text-shadow: 0 1px 4px #a00a;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .doom-text {
+      font-family: 'AmazDooMLeft2', 'Orbitron', Arial, sans-serif;
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      color: #ff6a00;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 16px #a00a, 0 0 2px #fff2;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(26, 10, 10, 0.92);
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #232323 60%, #2d0909 100%);
+      border-radius: 18px;
+      padding: 2.5rem 2rem 2rem 2rem;
+      text-align: center;
+      color: #fff200;
+      box-shadow: 0 0 32px #a00a, 0 0 8px #ff6a00aa;
+      font-family: 'Bungee', 'Orbitron', Arial, sans-serif;
+      max-width: 550px;
+      border: 6px solid #ff6a00;
+      position: relative;
+      animation: modalPop 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+    }
+
+    @keyframes modalPop {
+      0% {
+        transform: scale(0.7);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-content h2 {
+      color: #ff6a00;
+      margin-bottom: 1.2rem;
+      font-size: 2rem;
+      text-shadow: 0 2px 16px #a00a, 0 0 2px #fff2;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .doomskull {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+      filter: drop-shadow(0 0 4px #ff6a00);
+    }
+
+    .flag {
+      color: #fff200;
+      font-size: 1.2rem;
+      margin: 1.5rem 0 1rem 0;
+      word-break: break-all;
+      text-shadow: 0 2px 8px #a00a, 0 0 2px #fff;
+      font-family: 'Bungee', 'Orbitron', Arial, sans-serif;
+    }
+
+    .close-btn {
+      margin-top: 1.5rem;
+      font-family: 'Bungee', 'Orbitron', Arial, sans-serif;
+      font-size: 1.1rem;
+      padding: 0.7rem 2rem;
+      background: linear-gradient(180deg, #ff6a00 60%, #a00 100%);
+      color: #fff;
+      border: 3px solid #fff200;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #a00a, 0 0 8px #ff6a00aa;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s, border 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+
+    .close-btn::before {
+      content: '\1F480';
+      font-size: 1.2em;
+      margin-right: 0.5em;
+      color: #fff200;
+      filter: drop-shadow(0 0 2px #a00);
+    }
+
+    .close-btn:hover {
+      background: linear-gradient(180deg, #fff200 40%, #a00 100%);
+      color: #a00;
+      border-color: #ff6a00;
+      box-shadow: 0 4px 16px #ff6a00aa, 0 0 12px #a00a;
+    }
+
+    @media (max-width: 600px) {
+
+      .container,
+      .modal-content {
+        padding: 1.2rem 0.5rem;
+        max-width: 98vw;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .modal-content h2 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <span class="doom-emoji">💀</span>
+    <h1 class="doom-text">Reverse Intro Challenge</h1>
+    <p>Enter the flag to unlock the next level!</p>
+    <input id="flagInput" class="retro-input" type="text" placeholder="Enter flag here..." autocomplete="off" />
+    <br>
+    <button class="retro-btn" onclick="checkFlag()">Check</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <div class="modal" id="congratsModal">
+    <div class="modal-content">
+      <span class="doomskull">💀</span>
+      <h1 class="doom-text">CONGRATULATIONS!</h1>
+      <p>You have completed the challenge! You can validate with:</p>
+      <div id="flag" class="flag"></div>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // The flag check is not straightforward. Reverse engineering required!
+    function checkFlag() {
+      const input = document.getElementById('flagInput').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (!input.startsWith("BBCTF{") || !input.endsWith("}")) {
+        errorMsg.textContent = "Invalid flag format.";
+        return;
+      }
+
+      const core = input.slice(6, -1); // remove BBCTF{ }
+
+      if (btoa(core.split('').reverse().join('')) === 'dDFfdDBuX3MxX3MxaHQ=') {
+        errorMsg.textContent = '';
+        document.getElementById('congratsModal').style.display = 'flex';
+        document.getElementById('flag').textContent = input;
+      } else {
+        errorMsg.textContent = 'Incorrect flag. Try again!';
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('congratsModal').style.display = 'none';
+      document.getElementById('flagInput').value = '';
+    }
+    // Allow Enter key to submit
+    document.getElementById('flagInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') checkFlag();
+    });
+    // Hide error message on input change
+    document.getElementById('flagInput').addEventListener('input', function () {
+      document.getElementById('errorMsg').textContent = '';
+    });
+  </script>
+</body>
+
+</html>
