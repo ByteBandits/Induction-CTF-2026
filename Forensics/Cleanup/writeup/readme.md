@@ -170,7 +170,7 @@ cat tmp/priv.txt
 ## 🏁 Flag
 
 ```
-**`BBCTF{d3l3ti0n_is_n0t_d3struc7ion}`**
+BBCTF{d3l3ti0n_is_n0t_d3struc7ion}
 ```
 
 ---
