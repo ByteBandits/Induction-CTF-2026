@@ -1,6 +1,5 @@
----
-
 # 📝 Solution / Write-up
+
 
 ## Step 1 — Identify the string
 
