@@ -4,7 +4,7 @@
 
 We are provided with `Project.txt` containing:
 
-VVMBT{Y4WHD0WE1KG_L3K_0K_BYRUW_E3JV04WHS}
+**VVMBT{Y4WHD0WE1KG_L3K_0K_BYRUW_E3JV04WHS}**
 
 
 At first glance, this already resembles a flag format, but the text appears scrambled or meaningless.
@@ -47,7 +47,7 @@ In other words:
 
 Mapping Workman → QWERTY reveals the readable text:
 
-BBCTF{H4RDW0RK1NG_M3N_0N_THEIR_K3YB04RDS}
+**`BBCTF{H4RDW0RK1NG_M3N_0N_THEIR_K3YB04RDS}`**
 
 
 ---
