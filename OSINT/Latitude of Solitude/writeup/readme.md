@@ -18,9 +18,10 @@ This clearly suggests an Arctic or extreme northern location.
 
 Since this is an OSINT challenge and the image looks like it could be taken from Street View, we perform a reverse image search.
 
-If you are lucky, this leads to an online article mentioning the **northernmost places reached by** :contentReference[oaicite:0]{index=0} Street View, where the place name can be directly found.
+If you are lucky, this leads to an online article mentioning the **northernmost places reached by** Google Street View, where the place name can be directly found.
 
 ---
+
 
 ## Step 3 — Manual searching (alternative method)
 
@@ -28,11 +29,10 @@ If reverse image search does not work, we can manually search for:
 
 "northernmost place with Google Street View"
 
-This leads us to:
-
-:contentReference[oaicite:1]{index=1}
+This leads us to **Quttinirpaaq National Park (Nunavut, Canada)**,
 
 which is one of the northernmost accessible locations with Street View coverage.
+
 
 ---
 
