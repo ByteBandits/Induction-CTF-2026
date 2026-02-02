@@ -10,7 +10,7 @@ We need to know exactly where this 'magical' bakery is. Find the coordinates of 
 The flag format: BBCTF{name_of_bakery_latitude_longitude}.
 Ex. : BBCTF{Xi_Xingping_Bakery_76.33_23.54}  (accurate two decimal places)
 
-![hp.png](/files/182ebc0c35f7d7927a5d1fa9bd5f2c38/hp.png)
+![hp.png](hp.png)
 
 
 
