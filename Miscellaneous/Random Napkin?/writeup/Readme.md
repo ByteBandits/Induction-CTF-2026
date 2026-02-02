@@ -59,4 +59,4 @@ The hidden data reveals the flag.
 ---
 
 ## 🏁 Flag
-BBCTF{h4sh_cr4ck1ng_4nd_b17_pl4n3_st3gn0gr4phy}
+**`BBCTF{h4sh_cr4ck1ng_4nd_b17_pl4n3_st3gn0gr4phy}`**
