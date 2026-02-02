@@ -1,22 +1,31 @@
-📝 Solution / Write-up
+# 📝 Solution / Write-up
 
-Step1:
-Identify the Event
-From the image, the cultural fest name was clearly visible.
-The fest is organized by Fluxus, the official cultural body of our college.
-Find the Organizer’s Social Media
+## Step 1 — Identify the Event
 
-Step2:
-Since Fluxus organizes the fest, their Instagram account was the most likely source of announcements.
-Searched Instagram for the official Fluxus page.
-Analyze the Hint
-The title “The Night Before” implies looking at a post made 24 hours before the fest.
+From the given image, the name of the **cultural fest** is clearly visible.
 
-Step3:
-So, I checked Fluxus’s Instagram timeline and navigated to posts made one day prior to the fest date.
-Locate the Relevant Post
-Found a post uploaded approximately 24 hours before the fest.
-That post announced the band performing at the fest.
+The fest is organized by **Fluxus**, the official cultural body of our college.
 
-Flag
-flag: BBCTF{Subharambh}
+---
+
+## Step 2 — Find the Organizer’s Social Media
+
+Since Fluxus organizes the fest, their **Instagram account** is the most reliable source for announcements.
+
+I searched Instagram and located the **official Fluxus page**.
+
+The challenge title **“The Night Before”** serves as a hint, implying that the required information was posted **24 hours before the fest**.
+
+---
+
+## Step 3 — Analyze Posts Before the Event
+
+I navigated through Fluxus’s Instagram timeline and checked posts uploaded **one day prior** to the fest date.
+
+One post made approximately **24 hours before the event** announced the **band performing at the fest**.
+
+---
+
+## 🏁 Flag
+
+**`BBCTF{Subharambh}`**
