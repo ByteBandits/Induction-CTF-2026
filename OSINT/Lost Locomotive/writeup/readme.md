@@ -1,4 +1,4 @@
-# 📝 Solution / Write-up
+# 📝 Solution
 
 From the image, we can see a small railway station surrounded by mountains and a river, suggesting a remote mountainous region.
 
