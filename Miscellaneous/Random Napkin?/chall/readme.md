@@ -38,7 +38,13 @@ Whatever they were hiding is still inside that archive.
 
 ---
 
+---
+
 ## Flag Format
 
-BBCTF{ }
+`BBCTF{...}`
 
+<details>
+<summary>🔽 Click to reveal flag</summary>
+  BBCTF{h4sh_cr4ck1ng_4nd_b17_pl4n3_st3gn0gr4phy}
+</details>
