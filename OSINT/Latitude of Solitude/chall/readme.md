@@ -1,6 +1,6 @@
 # 🌌 Latitude Of Solitude
 
-### OSINT • 930 Points
+### OSINT • 1000 Points
 
 ---
 
