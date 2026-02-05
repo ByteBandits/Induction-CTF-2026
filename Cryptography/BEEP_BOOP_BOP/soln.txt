@@ -1,0 +1,12 @@
+generate the spectogram using sox or any browser related software.
+
+Notice the first hint that was in the challenge description "ASCIING".
+So most practical thing would be to assume that whatever numbers you'd get out of it are in ASCII.
+The second hint was in the first 8 frequencies.The hint here being 8, where these frequencies were repeated later at other orders in the spectogram/mp3 file.
+
+So that would deduce the fact that the 3 bit sequences were stored in octal encoding.
+
+Then it should be converted into a decimal, then mapped back into characters using the ASCII table to get the final flag.
+
+
+look into the other file to see how this challenge was made.
